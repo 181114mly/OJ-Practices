@@ -1,0 +1,38 @@
+package LeetCode;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class JewelsAndStones {
+    //方法一
+    public int numJewelsInStones(String J, String S) {
+            //1、先创建一个set,遍历J，把所有的宝石类型加入set中。
+            Set<Character> set=new HashSet<>();
+            for(char c:J.toCharArray()){
+                set.add(c);
+            }
+            //2、遍历S，把S中的每个元素在set进行查找，如果找到了就是宝石。
+            int sum=0;
+            for(char c:S.toCharArray()){
+                if(set.contains(c)){
+                    sum++;
+                }
+            }
+            return sum;
+    }
+    //方法二
+    public int numJewelsInStones1(String J, String S){
+        char[] c1=J.toCharArray();
+        char[] c2=S.toCharArray();
+        int ret=0;
+        for(int i=0;i<c1.length;i++){
+            for(int j=0;j<c2.length;j++){
+                if(c1[i]==c2[j]){
+                    ret++;
+                }
+                continue;
+            }
+        }
+        return ret;
+    }
+}
