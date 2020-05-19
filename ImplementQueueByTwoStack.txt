@@ -1,0 +1,27 @@
+//题目描述:用两个栈来实现一个队列，完成队列的Push和Pop操作。
+
+import java.util.Stack;
+
+public class Solution {
+    Stack<Integer> A = new Stack<Integer>();
+    Stack<Integer> B = new Stack<Integer>();
+    
+    public void push(int node) {
+        if(!B.isEmpty()){
+            int temp=B.pop();
+            A.push(temp);
+        }
+        A.push(node);
+    }
+    
+    public Integer pop() {
+        if(A.isEmpty()&&B.isEmpty()){
+            return null;
+        }
+        while(!A.isEmpty()){
+            int temp=A.pop();
+            B.push(temp);
+        }
+        return B.pop();
+    }
+}
