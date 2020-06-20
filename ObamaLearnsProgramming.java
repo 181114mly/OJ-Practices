@@ -47,3 +47,33 @@ public class ObamaLearnsProgramming {
         }
     }
 }
+
+
+//方法二：math.ceil(x)方法,返回大于等于参数x的最小整数,即对浮点数向上取整.
+class ObamaLearnsProgramming2{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int n = sc.nextInt();
+            char c = sc.next().charAt(0);
+            //打印第一行
+            for(int i=0;i<n;i++){
+                System.out.print(c);
+            }
+            System.out.println();
+            //打印中间行，先输出第一个字符，在输出空格，最后输出字符。
+            for(int i=1;i<=Math.ceil((double)n/2)-2;i++){
+                System.out.print(c);
+                for(int j=2;j<=n-1;j++){
+                    System.out.print(" ");
+                }
+                System.out.print(c);
+                System.out.println();
+            }
+            //打印最后一行
+            for(int i=0;i<n;i++){
+                System.out.print(c);
+            }
+        }
+    }
+}

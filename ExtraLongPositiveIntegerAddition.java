@@ -55,3 +55,22 @@ public class ExtraLongPositiveIntegerAddition {
         return sb.toString();
     }
 }
+//方法二
+/**
+ * 构造器BigInger(String val),可以直接将十进制字符串表示形式转换为大整数。
+ * 大整数相加：方法add(BigInteger val) ，返回值为 (this + val)
+ *
+ */
+class ExtraLongPositiveIntegerAddition2{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            String s1=sc.nextLine();
+            String s2=sc.nextLine();
+            BigInteger num1=new BigInteger(s1);
+            BigInteger num2=new BigInteger(s2);
+            System.out.println(num1.add(num2));
+        }
+    }
+}
+
